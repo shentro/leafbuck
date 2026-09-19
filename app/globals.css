@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* ── Enable class-based dark mode ──────────────────────── */
+@variant dark (&:where(.dark, .dark *));
+
+/* ── LeafBuck Console CSS Tokens ───────────────────────── */
+:root {
+  --lb-green:    #3CB54A;
+  --lb-light:    #A3F07D;
+  --lb-muted:    #CDEBC5;
+  --lb-dark:     #1E5C28;
+
+  --bg-page:     #f5f7f0;
+  --bg-sidebar:  #ffffff;
+  --bg-card:     #ffffff;
+  --bg-topbar:   rgba(255, 255, 255, 0.90);
+  --border:      #e2ead9;
+
+  --text-primary: #1a2e1c;
+  --text-muted:   #5a7060;
+  --text-faint:   #9db5a0;
+}
+
+html.dark {
+  --bg-page:     #0c150d;
+  --bg-sidebar:  #111c12;
+  --bg-card:     #162018;
+  --bg-topbar:   rgba(17, 28, 18, 0.92);
+  --border:      rgba(60, 181, 74, 0.15);
+
+  --text-primary: #e8f5e9;
+  --text-muted:   #8aad8e;
+  --text-faint:   #4a6b4e;
+}
+
+@theme {
+  --color-lb-green:  #3CB54A;
+  --color-lb-light:  #A3F07D;
+  --color-lb-muted:  #CDEBC5;
+  --color-lb-dark:   #1E5C28;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ── Gradient text ──────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #3CB54A 0%, #1E5C28 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
